@@ -12,11 +12,11 @@ export function MediaSlot({ media, className = '', priority = false, variant = '
     {src ? media.kind === 'video' ? <video controls preload="none" playsInline poster={poster} aria-label={media.alt}>
       <source src={src} type={src.toLowerCase().endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
       Seu navegador não reproduz este vídeo. <a href={src}>Baixar vídeo</a>
-    </video> : <Image src={src} alt={media.alt} fill priority={priority} sizes={variant === 'hero' ? '(max-width: 900px) 100vw, 55vw' : '(max-width: 600px) 100vw, 50vw'} />
+    </video> : <Image src={src} alt={media.alt} fill priority={priority} sizes={variant === 'hero' ? '(max-width: 900px) 100vw, 55vw' : '(max-width: 600px) 100vw, 50vw'} data-parallax={variant === 'hero' ? undefined : '8'} />
       : <>
         {variant === 'hero' && <div className="hero-rings" aria-hidden="true"><span /><span /><span /><span /><span /><div className="ring-center">K<span>+</span></div></div>}
-        {(variant === 'pneus' || variant === 'rodas') && <div className={`product-art art-${variant}`} aria-hidden="true"><span /><i /><b /></div>}
-        <div className="media-empty-label"><span className="media-empty-icon">{media.kind === 'video' ? <Play size={20} aria-hidden="true" /> : <Camera size={18} aria-hidden="true" />}</span><span>{media.label}<small>{media.kind === 'video' ? 'Espaço reservado para vídeo' : 'Espaço reservado para foto'}</small></span></div>
+        {(variant === 'pneus' || variant === 'rodas') && <div className={`product-art art-${variant}`} aria-hidden="true" data-parallax="6"><span /><i /><b /></div>}
+        <div className="media-empty-label" data-parallax={variant === 'hero' ? undefined : '5'}><span className="media-empty-icon">{media.kind === 'video' ? <Play size={20} aria-hidden="true" /> : <Camera size={18} aria-hidden="true" />}</span><span>{media.label}<small>{media.kind === 'video' ? 'Espaço reservado para vídeo' : 'Espaço reservado para foto'}</small></span></div>
       </>}
   </div>;
 }

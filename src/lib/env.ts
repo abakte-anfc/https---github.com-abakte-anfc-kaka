@@ -10,5 +10,5 @@ function validateSiteUrl(value: string | undefined): string | undefined {
 
 export const env = {
   siteUrl: validateSiteUrl(process.env.NEXT_PUBLIC_SITE_URL),
-  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || '',
+  whatsappNumber: process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.trim() || '5575981317951',
 };

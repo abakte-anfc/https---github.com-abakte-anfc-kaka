@@ -6,9 +6,9 @@ const steps = [
   { number: '03', icon: CheckCheck, title: 'Confirma os detalhes.', text: 'A equipe confere compatibilidade, preço e disponibilidade com você antes de seguir com o pedido.' },
 ];
 export function QuoteSteps() {
-  return <section id="orcamento" className="section steps-section" aria-labelledby="steps-title"><div className="container">
-    <div className="section-heading"><div><span className="eyebrow">03 / SEM COMPLICAÇÃO</span><h2 id="steps-title">Seu próximo upgrade<br />começa numa conversa<span className="yellow-dot">.</span></h2></div><ArrowUpRight size={50} className="heading-arrow" aria-hidden="true" /></div>
-    <div className="steps-grid">{steps.map(step => <article className="step" key={step.number}><div className="step-top"><span>{step.number}</span><step.icon size={26} aria-hidden="true" /></div><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
-    <div className="steps-bottom"><p>Não sabe a medida? Comece pelo modelo e ano do veículo.</p><QuoteLink /></div>
+  return <section id="orcamento" className="section steps-section" aria-labelledby="steps-title" data-motion-section><div className="container">
+    <div className="section-heading"><div data-motion-item><span className="eyebrow">03 / SEM COMPLICAÇÃO</span><h2 id="steps-title">Seu próximo upgrade<br />começa numa conversa<span className="yellow-dot">.</span></h2></div><ArrowUpRight size={50} className="heading-arrow" aria-hidden="true" data-motion-item /></div>
+    <div className="steps-grid">{steps.map(step => <article className="step" key={step.number} data-motion-item><div className="step-top"><span data-parallax="5">{step.number}</span><step.icon size={26} aria-hidden="true" /></div><h3>{step.title}</h3><p>{step.text}</p></article>)}</div>
+    <div className="steps-bottom" data-motion-item><p>Não sabe a medida? Comece pelo modelo e ano do veículo.</p><QuoteLink /></div>
   </div></section>;
 }

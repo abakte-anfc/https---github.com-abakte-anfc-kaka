@@ -319,6 +319,8 @@ Considerar estoque, agendamento, CRM ou analytics somente quando a KaKa identifi
 - A identificação textual da empresa é provisória até receber o arquivo de logotipo oficial; não se apresenta como redesenho do logo.
 - Usar Next.js 16, React 19, Tailwind 4, pnpm e Node.js disponível no ambiente. Sem backend ou rastreamento.
 - Domínio ausente: não inventar canonical nem domínio do sitemap; configurar após informar `NEXT_PUBLIC_SITE_URL`. Versão de revisão sem domínio fica fora de indexação.
+- O título da primeira dobra usa SplitText para revelar letras preservando a frase inteira por `aria-label`. Nas demais seções, GSAP e ScrollTrigger animam itens em sequência e aplicam parallax atrelado à rolagem nos dois sentidos. As animações respeitam `prefers-reduced-motion` e não escondem texto do leitor de tela.
+- Dependências de movimento aprovadas nesta mudança: `gsap` e `@gsap/react`. Não adicionar vídeo em autoplay ou dependências adicionais de animação.
 
 <!-- BEGIN:nextjs-agent-rules -->
 
